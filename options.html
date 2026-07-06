@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações - ZamDB</title>
+    <style>
+        :root { --bg: #1b2838; --panel: #171a21; --text: #c6d4df; --accent: #67c1f5; --success: #a4d007; }
+        body { font-family: "Motiva Sans", sans-serif; background-color: var(--bg); color: var(--text); padding: 30px; max-width: 500px; margin: 0 auto; }
+        h2 { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .group { background: var(--panel); padding: 15px; border-radius: 4px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: bold; cursor: pointer; }
+        input[type="text"], select { width: 100%; padding: 8px; margin-top: 5px; background: rgba(0,0,0,0.3); border: 1px solid var(--accent); color: #fff; border-radius: 3px; box-sizing: border-box; }
+        input[type="checkbox"] { margin-right: 8px; transform: scale(1.2); accent-color: var(--accent); }
+        button { width: 100%; padding: 12px; background: var(--accent); border: none; color: #000; font-weight: bold; font-size: 14px; cursor: pointer; border-radius: 3px; transition: 0.2s; }
+        button:hover { background: #fff; }
+        #status { margin-top: 10px; font-size: 13px; color: var(--success); text-align: center; height: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2 data-i18n="title_general">⚙️ ZamDB - Geral</h2>
+    
+    <div class="group">
+        <label>
+            <span data-i18n="lbl_api">API Key (GG.Deals)</span>
+            <input type="text" id="opt_api_key" data-i18n-placeholder="plc_api">
+        </label>
+        <label>
+            <span data-i18n="lbl_lang">Idioma da Interface</span>
+            <select id="opt_lang">
+                <option value="pt">Português (BR)</option>
+                <option value="en">English (US)</option>
+            </select>
+        </label>
+    </div>
+
+    <h2 data-i18n="title_modules">🧩 Módulos da Dashboard</h2>
+    <div class="group">
+        <label><input type="checkbox" id="mod_economy"> <span data-i18n="chk_eco">Exibir Economia e Histórico</span></label>
+        <label><input type="checkbox" id="mod_drm"> <span data-i18n="chk_drm">Exibir Proteção / Status de DRM</span></label>
+        <label><input type="checkbox" id="mod_dlc"> <span data-i18n="chk_dlc">Exibir DLC Unlocker</span></label>
+        <label><input type="checkbox" id="mod_downloads"> <span data-i18n="chk_down">Exibir Links de Download</span></label>
+        <label><input type="checkbox" id="mod_debug"> <span data-i18n="chk_debug">Exibir Trace Log de Auditoria</span></label>
+    </div>
+
+    <button id="saveBtn" data-i18n="btn_save">Salvar e Aplicar</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>
